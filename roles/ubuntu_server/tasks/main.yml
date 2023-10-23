@@ -1,2 +1,11 @@
- - name: Installing Prometheus (Ubuntu)
+
+  - name: Installing Prometheus (Ubuntu)
+    tags: ubuntu, prmths
+    apt:
+      name: 
+        - prometheus
+        - prometheus-node-exporter
+      state: latest
+
+ 
   

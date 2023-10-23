@@ -1,0 +1,20 @@
+  - name: install unzip
+    package:
+      name: unzip
+
+  - name: Installing Prometheus (CentOS)
+    tags: centos, prmths
+    unarchive: 
+      src: https://github.com/prometheus/prometheus/releases/download/v2.42.0/prometheus-2.42.0.linux-amd64.tar.gz
+      dest: /usr/local/bin
+      remote_src: yes
+      mode: 0777
+      owner: root
+      group: root
+
+  - name: Get
+    dnf:
+      name:
+        - wget
+      state: latest
+    when: ansible_distribution == "CentOS"
