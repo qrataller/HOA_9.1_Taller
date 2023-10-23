@@ -18,3 +18,15 @@
         - wget
       state: latest
     when: ansible_distribution == "CentOS"
+
+  - name: Creating prometheus directory
+    file:
+      path: "{{ item }}"
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+    loop:
+      - /etc/prometheus
+      - var/lib/prometheus
+
