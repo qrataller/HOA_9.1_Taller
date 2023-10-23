@@ -28,5 +28,5 @@
       mode: 0755
     loop:
       - /etc/prometheus
-      - var/lib/prometheus
-
+      - /var/lib/prometheus
+ 
